@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ---------- SHADCN DEFAULTS ---------- */
+@theme {
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  --color-primary: 222.2 47.4% 11.2%;
+  --color-primary-foreground: 210 40% 98%;
+  --color-secondary: 210 40% 96.1%;
+  --color-secondary-foreground: 222.2 47.4% 11.2%;
+  --color-muted: 210 40% 96.1%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  --color-accent: 210 40% 96.1%;
+  --color-accent-foreground: 222.2 47.4% 11.2%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 214.3 31.8% 91.4%;
+  --color-input: 214.3 31.8% 91.4%;
+  --color-ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+/* ---------- DARK MODE ---------- */
+.dark {
+  --color-background: 222.2 84% 4.9%;
+  --color-foreground: 210 40% 98%;
+  --color-card: 222.2 84% 4.9%;
+  --color-card-foreground: 210 40% 98%;
+  --color-popover: 222.2 84% 4.9%;
+  --color-popover-foreground: 210 40% 98%;
+  --color-primary: 210 40% 98%;
+  --color-primary-foreground: 222.2 47.4% 11.2%;
+  --color-secondary: 217.2 32.6% 17.5%;
+  --color-secondary-foreground: 210 40% 98%;
+  --color-muted: 217.2 32.6% 17.5%;
+  --color-muted-foreground: 215 20.2% 65.1%;
+  --color-accent: 217.2 32.6% 17.5%;
+  --color-accent-foreground: 210 40% 98%;
+  --color-destructive: 0 62.8% 30.6%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 217.2 32.6% 17.5%;
+  --color-input: 217.2 32.6% 17.5%;
+  --color-ring: 212.7 26.8% 83.9%;
+}
+
+/* ---------- BASE ---------- */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen antialiased;
+  }
+}
+
+/* ---------- MIRAI MINDS THEME COLORS ---------- */
+:root {
+  --ast-global-color-0: #060097;
+  --ast-global-color-1: #c10fff;
+  --ast-global-color-2: #1e293b;
+  --ast-global-color-3: #67768e;
+  --ast-global-color-4: #f9f6fe;
+  --ast-global-color-5: #ffffff;
+  --ast-global-color-6: #f2f5f7;
+  --ast-global-color-7: #ffcd57;
+  --ast-global-color-8: #000000;
+
+  /* Custom brand tokens */
+  --mirai-text-primary: #F7F7F7;
+  --mirai-accent: #EABE0E9C;
+  --mirai-button-bg: #FFFFFF;
+
+  font-family: "Noto Serif JP", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- FOOTER BOTTOM (Sticky Banner) ---------- */
+.footer-bottom-banner {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 800px;
+  height: 70px;
+  background: linear-gradient(228deg, rgba(255,191,15,0.88) 51%, rgba(235,148,14,0.82) 58%);
+  font-family: Verdana, sans-serif;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+  .footer-bottom-banner {
+    width: 360px;
+    height: 88px;
+    padding: 0 1rem;
+  }
+}
+
+/* Button */
+.footer-bottom-banner button,
+.footer-bottom-banner a {
+  background: linear-gradient(135deg, rgba(252,185,0,1) 0%, rgba(255,105,0,1) 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.footer-bottom-banner a:hover {
+  opacity: 0.9;
+}
+
+/* Slide animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
