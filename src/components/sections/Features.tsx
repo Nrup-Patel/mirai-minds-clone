@@ -29,56 +29,90 @@ const features = [
 export default function FeaturesSection() {
   return (
     <section
-      className="py-24 px-6 bg-[url('https://miraiminds.jp/wp-content/uploads/2024/09/mm-hp-bg7.webp')] bg-no-repeat bg-bottom bg-cover"
+      className="py-20 sm:py-24 px-4 sm:px-6 bg-[url('https://miraiminds.jp/wp-content/uploads/2024/09/mm-hp-bg7.webp')] bg-no-repeat bg-bottom bg-cover overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto text-center mb-16">
-        {/* Section Banner Image */}
-        <div className="mb-8 flex justify-center">
+      {/* Section Header */}
+      <div className="max-w-[1200px] mx-auto text-center mb-12 sm:mb-16">
+        <div className="mb-6 sm:mb-8 flex justify-center">
           <Image
             src="https://miraiminds.jp/wp-content/uploads/2024/08/mm-hp-h1-1.png"
             alt="Mirai Minds Section Banner"
-            width={320}
-            height={150}
-            className="object-contain"
+            width={280}
+            height={140}
+            className="object-contain w-[200px] sm:w-[260px] md:w-[320px]"
           />
         </div>
 
-        <h2
-          className="text-3xl md:text-4xl font-semibold text-gray-900"
+        <h1
+          className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900"
           style={{ fontFamily: '"Noto Serif JP", serif' }}
         >
           Mirai Minds Features
-        </h2>
+        </h1>
       </div>
 
-      {/* Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
-        {features.map((feature, idx) => (
-          <div
-            key={idx}
-            className="bg-white/30 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center text-center shadow-lg transition-transform transform hover:scale-105"
-          >
-            <Image
-              src={feature.img}
-              alt={feature.title}
-              width={300}
-              height={300}
-              className="mb-6 rounded-xl object-contain"
-            />
-            <h3
-              className="text-xl md:text-2xl font-semibold mb-3 text-gray-900"
-              style={{ fontFamily: '"Noto Serif JP", serif' }}
+      {/* Scrollable wrapper for mobile */}
+      <div className="overflow-x-auto md:overflow-visible">
+        <div
+          className="
+            flex 
+            md:grid 
+            md:grid-cols-3 
+            gap-6 sm:gap-8 
+            max-w-[1200px] 
+            mx-auto 
+            md:justify-items-center 
+            px-2 
+            snap-x 
+            snap-mandatory 
+            md:snap-none
+            scrollbar-hide
+          "
+        >
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="
+                flex-shrink-0 
+                w-[85%] 
+                sm:w-[75%] 
+                md:w-auto 
+                bg-white/60 
+                backdrop-blur-md 
+                rounded-2xl 
+                p-6 sm:p-8 
+                flex flex-col 
+                items-center 
+                text-center 
+                shadow-lg 
+                transition-transform 
+                hover:scale-[1.03] 
+                hover:shadow-xl 
+                snap-center
+              "
             >
-              {feature.title} <br /> {feature.subtitle}
-            </h3>
-            <p
-              className="text-base md:text-lg text-gray-800 leading-relaxed"
-              style={{ fontFamily: '"Noto Serif JP", serif' }}
-            >
-              {feature.description}
-            </p>
-          </div>
-        ))}
+              <Image
+                src={feature.img}
+                alt={feature.title}
+                width={260}
+                height={260}
+                className="mb-5 sm:mb-6 rounded-xl object-contain w-[70%]"
+              />
+              <h3
+                className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-gray-900"
+                style={{ fontFamily: '"Noto Serif JP", serif' }}
+              >
+                {feature.title} <br /> {feature.subtitle}
+              </h3>
+              <p
+                className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed max-w-[90%]"
+                style={{ fontFamily: '"Noto Serif JP", serif' }}
+              >
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
