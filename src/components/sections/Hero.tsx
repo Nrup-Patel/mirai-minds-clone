@@ -139,7 +139,7 @@ export default function Hero() {
             </h1>
 
             <Link
-              href="/join-us"
+              href="https://miraiminds.jp/join-us/"
               className="inline-block bg-[#EB940E] text-white px-7 py-2.5 rounded-[10px] font-medium transition hover:opacity-90"
               style={{ fontSize: "16px", fontFamily: '"Noto Serif JP", serif' }}
             >
@@ -271,7 +271,7 @@ export default function Hero() {
       </p>
 
       <Link
-        href="/about-us"
+        href="https://miraiminds.jp/about-us/"
         className="inline-block mx-auto md:mx-0 rounded-[50px] border-2 border-black bg-white text-black font-semibold text-[16px] py-[8px] px-[24px] transition hover:opacity-90"
         style={{
           fontFamily: '"Noto Serif JP", serif',

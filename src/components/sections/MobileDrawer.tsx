@@ -13,11 +13,11 @@ interface MobileDrawerProps {
 
 const menuLinks = [
   { label: "top", href: "/" },
-  { label: "class", href: "/class" },
-  { label: "In-school (on-site) program", href: "/in-school" },
-  { label: "About Mirai Minds", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "inquiry", href: "/inquiry" },
+  { label: "class", href: "https://miraiminds.jp/live-classes/" },
+  { label: "In-school (on-site) program", href: "https://miraiminds.jp/in-school-programs/" },
+  { label: "About Mirai Minds", href: "https://miraiminds.jp/about-us/" },
+  { label: "Blog", href: "https://miraiminds.jp/blog/" },
+  { label: "inquiry", href: "https://miraiminds.jp/join-us/" },
 ];
 
 export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {

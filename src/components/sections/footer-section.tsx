@@ -45,11 +45,11 @@ export default function FooterSection() {
           <ul className="space-y-3 text-white/90 text-[16px] leading-relaxed">
             {[
               ["Top", "/"],
-              ["Class", "/live-classes"],
-              ["In-school (on-site) program", "/in-school-programs"],
-              ["About Mirai Minds", "/about-us"],
-              ["Blog", "/blog"],
-              ["Inquiry", "/join-us"],
+              ["Class", "https://miraiminds.jp/live-classes/"],
+              ["In-school (on-site) program", "https://miraiminds.jp/in-school-programs/"],
+              ["About Mirai Minds", "https://miraiminds.jp/about-us/"],
+              ["Blog", "https://miraiminds.jp/blog/"],
+              ["Inquiry", "https://miraiminds.jp/join-us/"],
             ].map(([label, link]) => (
               <li key={label}>
                 <Link

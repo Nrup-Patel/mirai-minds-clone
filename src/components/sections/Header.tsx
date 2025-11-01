@@ -80,9 +80,8 @@ export default function Header() {
               TEL: +81 70 2220 4436
             </Link>
 
-            {/* Inquiry Button */}
             <Link
-              href="/join-us"
+              href="https://miraiminds.jp/join-us/"
               className="hidden md:inline-block bg-[#EB940E] text-white text-[15px] font-semibold rounded-[10px] px-[22px] py-[8px] transition hover:opacity-90"
               style={{ fontFamily: '"Noto Serif JP", serif' }}
             >

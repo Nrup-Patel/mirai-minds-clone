@@ -46,7 +46,7 @@ export default function BottomBanner() {
 
         {/* CTA Button */}
         <Link
-          href="/join-us"
+          href="https://miraiminds.jp/about-us/"
           className='rounded-full bg-gradient-to-br from-[#eb940e] to-[#e5c80d] text-[#0a0a0a] font-semibold text-sm md:text-base px-6 py-2 hover:brightness-105 transition tracking-wide'
           style={{ fontFamily: '"Shippori Mincho", serif' }}
         >
