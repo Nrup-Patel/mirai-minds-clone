@@ -154,6 +154,9 @@ footer {
   animation: float 3.5s ease-in-out infinite;
 }
 
+/* in globals.css (add near other helpers) */
+
+/* hide default scrollbar (already present but safe to ensure) */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -161,3 +164,17 @@ footer {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* make horizontal scrolling smoother on iOS/Android */
+.touch-pan-x {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ensure the fade overlays work on top of the scroll area */
+@media (max-width: 767px) {
+  .features-fade {
+    display: block;
+  }
+}
+

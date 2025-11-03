@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import CloseIcon from "../../../public/close-icon.svg";
+import MenuIcon from "../icons/MenuIcon";
 
 interface MobileDrawerProps {
   open: boolean;
@@ -57,9 +57,9 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="text-gray-600 hover:text-black transition"
+                className="transition hover:opacity-80"
               >
-                <Image src={CloseIcon} alt="Close" width={24} height={24} />
+                <MenuIcon size={26} color="#BC5A1B" isClose />
               </button>
             </div>
 

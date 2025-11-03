@@ -9,7 +9,7 @@ import Logo from "../../../public/logo.svg";
 import Facebook from "../../../public/facebook-icon.svg";
 import Instagram from "../../../public/instagram-icon.svg";
 import LinkedIn from "../../../public/linkdin-icon.svg";
-import MenuIcon from "../../../public/menu-icon.svg";
+import MenuIcon from "../icons/MenuIcon";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -70,7 +70,6 @@ export default function Header() {
                 <Image src={LinkedIn} alt="LinkedIn" width={22} height={22} />
               </Link>
             </div>
-
             {/* TEL Button */}
             <Link
               href="tel:+817022204436"
@@ -79,7 +78,6 @@ export default function Header() {
             >
               TEL: +81 70 2220 4436
             </Link>
-
             <Link
               href="https://miraiminds.jp/join-us/"
               className="hidden md:inline-block bg-[#EB940E] text-white text-[15px] font-semibold rounded-[10px] px-[22px] py-[8px] transition hover:opacity-90"
@@ -87,14 +85,13 @@ export default function Header() {
             >
               inquiry
             </Link>
-
-            {/* Mobile Menu Trigger */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setDrawerOpen(true)}
-              aria-label="Open mobile menu"
-              className="flex md:hidden"
+              aria-label="Open navigation menu"
+              className="flex items-center justify-center ml-2 p-1 hover:opacity-80 transition"
             >
-              <Image src={MenuIcon} alt="Menu" width={28} height={28} />
+              <MenuIcon color="#BC5A1B" />
             </button>
           </div>
         </div>

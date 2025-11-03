@@ -11,6 +11,11 @@ const shippori = Shippori_Mincho({ subsets: ["latin"], weight: ["400", "700"], v
 export const metadata: Metadata = {
   title: "Mirai Minds Japan",
   description: "Cloned site using Next.js + shadcn + TypeScript + TailwindCSS",
+  icons: {
+    icon: "./1B-cropped.svg", // or /icon.svg
+    shortcut: "/1B-cropped.svg",
+    apple: "/1B-cropped.svg",
+  },
 };
 
 export default function RootLayout({

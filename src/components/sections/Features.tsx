@@ -1,3 +1,4 @@
+// src/components/sections/Features.tsx
 "use client";
 
 import Image from "next/image";
@@ -30,16 +31,18 @@ export default function FeaturesSection() {
   return (
     <section
       className="py-20 sm:py-24 px-4 sm:px-6 bg-[url('https://miraiminds.jp/wp-content/uploads/2024/09/mm-hp-bg7.webp')] bg-no-repeat bg-bottom bg-cover overflow-hidden"
+      aria-label="Mirai Minds features"
     >
-      {/* Section Header */}
+      {/* Header */}
       <div className="max-w-[1200px] mx-auto text-center mb-12 sm:mb-16">
         <div className="mb-6 sm:mb-8 flex justify-center">
           <Image
             src="https://miraiminds.jp/wp-content/uploads/2024/08/mm-hp-h1-1.png"
             alt="Mirai Minds Section Banner"
-            width={280}
+            width={320}
             height={140}
             className="object-contain w-[200px] sm:w-[260px] md:w-[320px]"
+            priority
           />
         </div>
 
@@ -51,8 +54,12 @@ export default function FeaturesSection() {
         </h1>
       </div>
 
-      {/* Scrollable wrapper for mobile */}
-      <div className="overflow-x-auto md:overflow-visible">
+      {/* Scroll container (mobile) */}
+      <div className="relative">
+        {/* left/right fade overlays for visual polish on mobile */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 md:hidden bg-gradient-to-r from-white/100 to-white/0 z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 md:hidden bg-gradient-to-l from-white/100 to-white/0 z-10" />
+
         <div
           className="
             flex 
@@ -66,18 +73,21 @@ export default function FeaturesSection() {
             snap-x 
             snap-mandatory 
             md:snap-none
+            overflow-x-auto md:overflow-visible
             scrollbar-hide
-          "
+            touch-pan-x
+            "
+          role="list"
         >
           {features.map((feature, idx) => (
-            <div
+            <article
               key={idx}
+              role="listitem"
               className="
                 flex-shrink-0 
-                w-[85%] 
-                sm:w-[75%] 
+                w-[86%] sm:w-[78%]
                 md:w-auto 
-                bg-white/60 
+                bg-white/70 
                 backdrop-blur-md 
                 rounded-2xl 
                 p-6 sm:p-8 
@@ -93,10 +103,11 @@ export default function FeaturesSection() {
             >
               <Image
                 src={feature.img}
-                alt={feature.title}
-                width={260}
-                height={260}
-                className="mb-5 sm:mb-6 rounded-xl object-contain w-[70%]"
+                alt={`${feature.title} ${feature.subtitle}`}
+                width={300}
+                height={300}
+                className="mb-5 sm:mb-6 rounded-xl object-contain w-[70%] max-w-[260px]"
+                priority={false}
               />
               <h3
                 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-gray-900"
@@ -110,7 +121,7 @@ export default function FeaturesSection() {
               >
                 {feature.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
