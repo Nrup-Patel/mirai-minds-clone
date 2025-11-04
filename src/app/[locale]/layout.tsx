@@ -6,7 +6,6 @@ import { getMessages } from "next-intl/server";
 
 // 🧱 Layout Components
 import Header from "../../components/sections/Header";
- // 👈 Import new sticky footer
 
 // 🎨 Fonts
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
@@ -30,11 +29,15 @@ export const metadata: Metadata = {
   description: "Pixel-perfect clone with Next.js 15 + shadcn + TailwindCSS",
 };
 
-export default async function RootLayout(props: {
+// ✅ FIXED VERSION FOR NEXT.JS 15 TURBOPACK
+export default async function RootLayout({
+  children,
+  params,
+}: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { children, params } = props;
+  // ✅ Wait for params before using
   const { locale } = await params;
   const messages = await getMessages();
 
@@ -54,7 +57,7 @@ export default async function RootLayout(props: {
           <NextIntlClientProvider messages={messages}>
             <Header />
             <main>{children}</main>
-            {/* 👈 Added sticky footer here */}
+            {/* 👇 Sticky Footer or Bottom Banner goes here */}
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
